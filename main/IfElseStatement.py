@@ -1,5 +1,5 @@
 check = True
-food = "Hamburger"
+food = "Hamburge"
 
 if check == False:
     print("It's False")
@@ -15,7 +15,7 @@ if check is False:
     print("Check is False")
 elif food is "Hamburger":
     print("Wana eat", food)
-elif food != "Hamburger":
+elif food is not "Hamburger":
     print("so it's something else")
 
 
