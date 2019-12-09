@@ -4,11 +4,26 @@ print("Notre superbe calculatrice")
 print("Tape 'fin' pour sortir du programme")
 
 previous = 0
+equation = ""
+compute = True
 run = True
 
 
-def check_quit(str):
+def check_option(str):
     if str == "fin":
+        return False
+    else:
+        return True
+
+
+def check_compute(str):
+    global previous
+    global equation
+
+    if str == "c":
+        previous = 0
+        equation = ""
+        perform_math()
         return False
     else:
         return True
@@ -17,7 +32,8 @@ def check_quit(str):
 def perform_math():
     global run
     global previous
-    equation = ""
+    global equation
+    global compute
 
     if previous == 0:
         equation = input("Entre une equation: ")
@@ -25,9 +41,10 @@ def perform_math():
         equation = str(previous)+input(previous)
 
     check = re.sub('[0-9A-Z,*]','',equation)
-    run = check_quit(check)
+    compute = check_compute(check)
+    run = check_option(check)
 
-    if run:
+    if compute & run:
         equation = re.sub('[a-zA-Z,.:()" "]', '', equation)
         previous = eval(equation)
         print("Resultat: ",previous)
@@ -35,3 +52,4 @@ def perform_math():
 
 while run:
     perform_math()
+print("A plus!!")
