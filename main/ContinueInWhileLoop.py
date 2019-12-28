@@ -15,7 +15,9 @@ while playerHp > 0:
     print("Current Hp are: ", playerHp)
     print("-----")
 
-    if playerHp == 30:
-        print("You're Hp are low ...")
-        print("You have been teleport too a safer place")
-        break
+    if playerHp > 30:
+        continue
+
+    print("You're Hp are low ...")
+    print("You have been teleport too a safer place")
+    break

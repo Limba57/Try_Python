@@ -2,6 +2,7 @@ import re
 
 print("Notre superbe calculatrice")
 print("Tape 'fin' pour sortir du programme")
+print("Tapez c pour réinitialiser l'equation")
 
 previous = 0
 equation = ""

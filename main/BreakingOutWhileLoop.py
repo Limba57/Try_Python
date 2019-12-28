@@ -11,7 +11,7 @@ while playerHp > 0:
     if playerHp <= 30:
         playerHp = 30
 
-    print("Enemy strick for", dmg, "point of damage.")
+    print("Enemy hit for", dmg, "point of damage.")
     print("Current Hp are: ", playerHp)
     print("-----")
 
